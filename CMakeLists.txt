@@ -12,7 +12,7 @@ endif()
 project ("CPlusPlusPlayground")
 
 # Add source to this project's executable.
-add_executable (CPlusPlusPlayground "main.cpp" )
+add_executable (CPlusPlusPlayground "main.cpp"  "Conway/ansi_escapes.h" "Conway/ansi_escapes.cpp" "Conway/conway.cpp" "Conway/conway.h" "Conway/life.h" "Conway/cell.h" "Conway/cell.cpp" "Conway/grid.h" "Conway/grid.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CPlusPlusPlayground PROPERTY CXX_STANDARD 20)
