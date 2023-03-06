@@ -9,7 +9,7 @@
 
 class Grid
 {
-	Cell cells[row_max + 2][col_max + 2];
+	Cell cells[ROW_MAX + 2][COL_MAX + 2];
 
 public:
 	void Create(int row, int col);
@@ -23,6 +23,8 @@ public:
 	bool WillCreate(int row, int col);
 
 	void Update(const Grid& next);
+
+	int GetNeigbours(int row, int col);
 };
 
 void Calculate(Grid& old_generation, Grid& new_generation);

@@ -9,22 +9,26 @@ void SimulateConwayGame()
     // wait for return key press
     cin.get();
 
-
-
     setupConsole();
-
-    //cout << "\x1b[" << 10 << ";" << 10 << "H";
 
     Grid current_generation;
 
+    current_generation.Randomise();
+
     while (true)
     {
-        current_generation.Randomise();
-
         current_generation.Draw();
 
         cin.get();
+
+        Grid next_generation;
+
+        Calculate(current_generation, next_generation);
+
+        current_generation.Update(next_generation);
     }
+
+    cout << "\x1b[" << 0 << ";" << ROW_MAX - 1 << "H";
 
     restoreConsole();
 }
