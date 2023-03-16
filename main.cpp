@@ -3,24 +3,6 @@
 
 using namespace std;
 
-void TestVectors()
-{
-    vector <vector<int>> movie_ratings
-    {
-        {
-            1, 2, 3, 4
-        },
-        {
-            1, 2, 4, 4
-        },
-        {
-            1, 3, 4, 5
-        }
-    };
-
-    cout << "Movie Ratings: " << movie_ratings.at(0).at(1) << endl;
-}
-
 void TestStatementsAndOperators()
 {
     int total{};
@@ -66,37 +48,35 @@ int PointerFunc(int& y)
     return y;
 }
 
+//void TestPointers()
+//{
+//    int x = 2;
+//    cout << "Address of x is: " << &x << endl;
+//    int z = PointerFunc(x);
+//    cout << "Address of z is: " << &z << endl;
+//    cout << "After calling PointerFunc(), x = " << x << endl;
+//    cout << "After calling PointerFunc(), z = " << z << endl;
+//}
+
+void TestVectors()
+{
+    #include "Fundamentals/vectors.h"
+    VectorsDriver();
+}
+
+void TestArrays()
+{
+    #include "Fundamentals/arrays.h"
+    ArraysDriver();
+}
+
 void TestPointers()
 {
-    int x = 2;
-    cout << "Address of x is: " << &x << endl;
-    int z = PointerFunc(x);
-    cout << "Address of z is: " << &z << endl;
-    cout << "After calling PointerFunc(), x = " << x << endl;
-    cout << "After calling PointerFunc(), z = " << z << endl;
+    #include "Fundamentals/pointers.h"
+    PointersDriver();
 }
 
-void Simulate2dArray()
-{
-    int rowCount = 2;
-    int columnCount = 4;
-
-    string names[] = { "Fred", "Joe", "Sarah", "John", // [0, 0], [0, 1] ... [0, 3]
-        "Dino", "Betty", "Claudene", "Ryan"}; // [1, 0], [1, 1] ... [1, 3]
-
-    //cout << "names[1][2] = " << names[1 * 4 + 2] << endl;
-
-    cout << "\nThe elements of names are:\n";
-    for (int row = 0; row < rowCount; ++row)
-    {
-        for (int col = 0; col < columnCount; ++col)
-        {
-            cout << names[row * columnCount + col] << ", ";
-        }
-    }
-}
-
-void ConwayGame()
+void TestConwayGame()
 {
     #include "Conway/conway.h"
     SimulateConwayGame();
@@ -104,6 +84,6 @@ void ConwayGame()
 
 int main()
 {
-    ConwayGame();
+    TestPointers();
 	return 0;
 }
